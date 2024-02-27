@@ -1,0 +1,24 @@
+<%-include("layouts/head")%>
+
+    <%-include("layouts/nav")%>
+        <div class="container">
+            <form action="/addmovie" method="post">
+                <div class="row">
+                    <div class="col-md-4">
+                        <label for="Movie Name">Movie Name:</label>
+                        <input type="text" name="movie" class="form-control">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="Actor Name">Actor Name:</label>
+                        <input type="text" name="actor" class="form-control">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="Director Name">Director Name:</label>
+                        <input type="text" name="director" class="form-control">
+                    </div>
+                </div>
+                <br/>
+                <button type="submit" class="btn btn-info btn-lg btn-block">Add</button>
+            </form>
+        </div>
+        <%-include("layouts/footer")%>

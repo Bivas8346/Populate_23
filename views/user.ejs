@@ -1,0 +1,31 @@
+<%-include("layouts/head")%>
+    <%-include("layouts/nav")%>
+        <div class="container">
+            <form action="/adduser" method="post">
+                <div class="row">
+                    <div class="col-md-4">
+                        <label for="User Name">User Name:</label>
+                        <input type="text" name="user" class="form-control">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="User Email">User Email:</label>
+                        <input type="email" name="email" class="form-control">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="Movie">Select Movie:</label>
+                        <select name="movie" class="form-control">
+                            <option disabled selected>Select Movie</option>
+                            <% for(let data of displayData){ %>
+                                <option value="<%= data.id %>">
+                                    <%= data.Moviename %>
+                                </option>
+                                <% } %>
+                            </select>
+                    </div>
+                </div>
+                <br />
+
+                <button type="submit" class="btn btn-info btn-lg btn-block">Add</button>
+            </form>
+        </div>
+        <%-include("layouts/footer")%>

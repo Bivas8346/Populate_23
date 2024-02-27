@@ -1,0 +1,46 @@
+<%-include("layouts/head")%>
+
+
+    <%-include("layouts/nav")%>
+        <div class="container">
+            <h2>Review Table</h2>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>User Name</th>
+                        <th>User Email</th>
+                        <th>Movie name</th>
+                        <th>Actor name</th>
+                        <th>Director name</th>
+                        <th>User Review</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% for(let data of displayData) {%>
+                        <tr>
+                            <td>
+                                <%= data.user.Username %>
+                            </td>
+                            <td>
+                                <%= data.user.email %>
+                            </td>
+                            <td>
+                                <%= data.movie.MovieName %>
+                            </td>
+                            <td>
+                                <%= data.movie.actors %>
+                            </td>
+                            <td>
+                                <%= data.movie.director %>
+                            </td>
+                            <td>
+                                <%= data.review %>
+                            </td>
+                        </tr>
+                        <% } %>
+                </tbody>
+            </table>
+        </div>
+
+
+        <%-include("layouts/footer")%>
